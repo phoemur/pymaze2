@@ -163,6 +163,12 @@ BLACK = (0,   0,   0)
 # The maze.
 MAZE = dict()
 
+# Directions
+POSSIBLE = ('left',
+            'right',
+            'down',
+            'up')
+
 
 # Initialize the maze.
 def init_maze():
@@ -218,12 +224,7 @@ def get_badguy_init():
 
 
 def get_badguy_way():
-    possible = ['left',
-                'right',
-                'down',
-                'up']
-    random.shuffle(possible)
-    return possible[random.randint(0, len(possible) - 1)]
+    return random.choice(POSSIBLE)
 
 
 def main():

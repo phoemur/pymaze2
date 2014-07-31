@@ -30,6 +30,12 @@ YMARGIN = int(WINDOWHEIGHT - (HEIGHT * BOXSIZE)) / 2
 WHITE = (255, 255, 255)
 BLACK = (0,   0,   0)
 
+# Directions
+POSSIBLE = ('left',
+            'right',
+            'down',
+            'up')
+
 # The maze.
 MAZE = dict()
 
@@ -88,12 +94,7 @@ def get_badguy_init():
 
 
 def get_badguy_way():
-    possible = ['left',
-                'right',
-                'down',
-                'up']
-    random.shuffle(possible)
-    return possible[random.randint(0, len(possible) - 1)]
+    return random.choice(POSSIBLE)
 
 
 def main():
